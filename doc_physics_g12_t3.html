@@ -1,43 +1,79 @@
-<!-- doc_physics_g12_t3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physics - Grade 12 Term 3 Documents</title>
-<link rel="stylesheet" href="../style.css">
+<title>Select Subject (Documents)</title>
+<link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2575fc">
+<script>
+  function goToGrade(subject) {
+      const type = 'documents';
+      window.location.href = `grade_selection_docs.html?subject=${subject}&type=${type}`;
+  }
+</script>
 <style>
-body { font-family: Arial; background: #e3f2fd; margin:0; }
-header { background: #1976d2; color:#fff; padding:1rem; text-align:center; }
-.container { display:flex; flex-direction:column; align-items:center; gap:1rem; padding:1rem; overflow-y:auto; height:90vh; }
-.doc-card { background:#fff; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.2); width:400px; padding:10px; text-align:center; }
-.doc-card a { text-decoration:none; color:#1976d2; font-weight:bold; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e3f2fd;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #1976d2;
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.subject-card button {
+  background-color: #1976d2;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subject-card button:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+}
 </style>
 </head>
 <body>
-<header><h2>Physics - Grade 12 Term 3</h2></header>
+<header>
+  <h2>Select a Subject (Documents)</h2>
+</header>
+
 <div class="container">
-
-  <div class="doc-card">
-    <h4>Chapter 1 - Motion Notes</h4>
-    <div class="doc-bar"></div>
-    <a href="https://drive.google.com/file/d/1Qpa3wk0xrueOUBI5oLqmO5B9gBu7piQ1/preview" target="_blank">View</a>
+  <div class="subject-grid">
+    <div class="subject-card"><button onclick="goToGrade('physics')">Physics</button></div>
+    <div class="subject-card"><button onclick="goToGrade('chemistry')">Chemistry</button></div>
+    <div class="subject-card"><button onclick="goToGrade('biology')">Biology</button></div>
+    <div class="subject-card"><button onclick="goToGrade('math')">Mathematics</button></div>
   </div>
-
-  <div class="doc-card">
-    <h4>Chapter 2 - Forces Notes</h4>
-    <div class="doc-bar"></div>
-    <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view" target="_blank">View</a>
-  </div>
-
-  <div class="doc-card">
-    <h4>Chapter 3 - Work & Energy</h4>
-    <div class="doc-bar"></div>
-    <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view" target="_blank">View</a>
-  </div>
-
 </div>
 <script>
 if ("serviceWorker" in navigator) {
